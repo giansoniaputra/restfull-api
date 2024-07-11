@@ -97,6 +97,24 @@
             },
             "get": {
                 "description": "Get List addresses",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idContact",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "List Contact",
@@ -107,24 +125,27 @@
                                     "properties": {
                                         "data": {
                                             "type": "array",
-                                            "properties": {
-                                                "id": {
-                                                    "type": "number"
-                                                },
-                                                "street": {
-                                                    "type": "string"
-                                                },
-                                                "city": {
-                                                    "type": "string"
-                                                },
-                                                "provins": {
-                                                    "type": "string"
-                                                },
-                                                "country": {
-                                                    "type": "string"
-                                                },
-                                                "postal_code": {
-                                                    "type": "string"
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "number"
+                                                    },
+                                                    "street": {
+                                                        "type": "string"
+                                                    },
+                                                    "city": {
+                                                        "type": "string"
+                                                    },
+                                                    "provins": {
+                                                        "type": "string"
+                                                    },
+                                                    "country": {
+                                                        "type": "string"
+                                                    },
+                                                    "postal_code": {
+                                                        "type": "string"
+                                                    }
                                                 }
                                             }
                                         },
